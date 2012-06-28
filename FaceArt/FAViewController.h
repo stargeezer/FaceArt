@@ -7,7 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <GLKit/GLKit.h>
 
 @interface FAViewController : GLKViewController
+{
+    
+    float _curRed;
+    float _aspect;
+    BOOL _increasing;
+    float _rotation;
+    
+    GLuint _vertexBuffer;
+    GLuint _indexBuffer;
+}
+
+@property(strong, nonatomic)EAGLContext *context;
+@property(strong, nonatomic) GLKBaseEffect *_effect;
 
 @end
