@@ -137,11 +137,17 @@ const GLubyte Indices[] =
     self.paused = !self.paused;
 }
 
+-(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    UITouch *touch = [[event allTouches] anyObject];
+    CGPoint touchLocation = [touch locationInView:[touch view]];
+}
+
 #pragma mark GLKViewDelegate
 
 -(void)glkView:(GLKView *)view drawInRect:(CGRect)rect
 {
-    glClearColor(_curRed, 0.0, 0.0, 1.0);
+    glClearColor(0.0, 0.0, 0.0, 1.0);
     glClear(GL_COLOR_BUFFER_BIT);
     [self._effect prepareToDraw];
     
@@ -183,7 +189,7 @@ const GLubyte Indices[] =
     GLKMatrix4 projectionMatrix = GLKMatrix4MakePerspective(GLKMathDegreesToRadians(_aspect), aspect, 4.0, 10.0);
     self._effect.transform.projectionMatrix = projectionMatrix;
     
-    GLKMatrix4 modelViewMatrix = GLKMatrix4MakeTranslation(0.0, 0.0, -6.0);
+    GLKMatrix4 modelViewMatrix = GLKMatrix4MakeTranslation(1.0, 0.0, -6.0);
     _rotation += 90 * self.timeSinceLastUpdate;
     modelViewMatrix = GLKMatrix4Rotate(modelViewMatrix, GLKMathDegreesToRadians(_rotation), 0, 0, 1);
     self._effect.transform.modelviewMatrix = modelViewMatrix;
