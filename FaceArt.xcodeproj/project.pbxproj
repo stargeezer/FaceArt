@@ -1,0 +1,281 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E760DEBB159CD14A00D10C8E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E760DEBA159CD14A00D10C8E /* UIKit.framework */; };
+		E760DEBD159CD14A00D10C8E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E760DEBC159CD14A00D10C8E /* Foundation.framework */; };
+		E760DEBF159CD14A00D10C8E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E760DEBE159CD14A00D10C8E /* CoreGraphics.framework */; };
+		E760DEC5159CD14A00D10C8E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E760DEC3159CD14A00D10C8E /* InfoPlist.strings */; };
+		E760DEC7159CD14A00D10C8E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E760DEC6159CD14A00D10C8E /* main.m */; };
+		E760DECB159CD14A00D10C8E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E760DECA159CD14A00D10C8E /* AppDelegate.m */; };
+		E760DECE159CD14A00D10C8E /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E760DECC159CD14A00D10C8E /* MainStoryboard.storyboard */; };
+		E760DED1159CD14A00D10C8E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E760DED0159CD14A00D10C8E /* ViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		E760DEB6159CD14A00D10C8E /* FaceArt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FaceArt.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E760DEBA159CD14A00D10C8E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		E760DEBC159CD14A00D10C8E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		E760DEBE159CD14A00D10C8E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		E760DEC2159CD14A00D10C8E /* FaceArt-Info.plist */ = {isa = PBXFileReference; path = "FaceArt-Info.plist"; sourceTree = "<group>"; };
+		E760DEC4159CD14A00D10C8E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E760DEC6159CD14A00D10C8E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E760DEC8159CD14A00D10C8E /* FaceArt-Prefix.pch */ = {isa = PBXFileReference; path = "FaceArt-Prefix.pch"; sourceTree = "<group>"; };
+		E760DEC9159CD14A00D10C8E /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		E760DECA159CD14A00D10C8E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		E760DECD159CD14A00D10C8E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		E760DECF159CD14A00D10C8E /* ViewController.h */ = {isa = PBXFileReference; path = ViewController.h; sourceTree = "<group>"; };
+		E760DED0159CD14A00D10C8E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E760DEB3159CD14A00D10C8E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E760DEBB159CD14A00D10C8E /* UIKit.framework in Frameworks */,
+				E760DEBD159CD14A00D10C8E /* Foundation.framework in Frameworks */,
+				E760DEBF159CD14A00D10C8E /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E760DEAB159CD14900D10C8E = {
+			isa = PBXGroup;
+			children = (
+				E760DEC0159CD14A00D10C8E /* FaceArt */,
+				E760DEB9159CD14A00D10C8E /* Frameworks */,
+				E760DEB7159CD14A00D10C8E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E760DEB7159CD14A00D10C8E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E760DEB6159CD14A00D10C8E /* FaceArt.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E760DEB9159CD14A00D10C8E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E760DEBA159CD14A00D10C8E /* UIKit.framework */,
+				E760DEBC159CD14A00D10C8E /* Foundation.framework */,
+				E760DEBE159CD14A00D10C8E /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E760DEC0159CD14A00D10C8E /* FaceArt */ = {
+			isa = PBXGroup;
+			children = (
+				E760DEC9159CD14A00D10C8E /* AppDelegate.h */,
+				E760DECA159CD14A00D10C8E /* AppDelegate.m */,
+				E760DECC159CD14A00D10C8E /* MainStoryboard.storyboard */,
+				E760DECF159CD14A00D10C8E /* ViewController.h */,
+				E760DED0159CD14A00D10C8E /* ViewController.m */,
+				E760DEC1159CD14A00D10C8E /* Supporting Files */,
+			);
+			path = FaceArt;
+			sourceTree = "<group>";
+		};
+		E760DEC1159CD14A00D10C8E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E760DEC2159CD14A00D10C8E /* FaceArt-Info.plist */,
+				E760DEC3159CD14A00D10C8E /* InfoPlist.strings */,
+				E760DEC6159CD14A00D10C8E /* main.m */,
+				E760DEC8159CD14A00D10C8E /* FaceArt-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E760DEB5159CD14A00D10C8E /* FaceArt */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E760DED4159CD14A00D10C8E /* Build configuration list for PBXNativeTarget "FaceArt" */;
+			buildPhases = (
+				E760DEB2159CD14A00D10C8E /* Sources */,
+				E760DEB3159CD14A00D10C8E /* Frameworks */,
+				E760DEB4159CD14A00D10C8E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FaceArt;
+			productName = FaceArt;
+			productReference = E760DEB6159CD14A00D10C8E /* FaceArt.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E760DEAD159CD14900D10C8E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = E760DEB0159CD14900D10C8E /* Build configuration list for PBXProject "FaceArt" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = E760DEAB159CD14900D10C8E;
+			productRefGroup = E760DEB7159CD14A00D10C8E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E760DEB5159CD14A00D10C8E /* FaceArt */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E760DEB4159CD14A00D10C8E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E760DEC5159CD14A00D10C8E /* InfoPlist.strings in Resources */,
+				E760DECE159CD14A00D10C8E /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E760DEB2159CD14A00D10C8E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E760DEC7159CD14A00D10C8E /* main.m in Sources */,
+				E760DECB159CD14A00D10C8E /* AppDelegate.m in Sources */,
+				E760DED1159CD14A00D10C8E /* ViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		E760DEC3159CD14A00D10C8E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E760DEC4159CD14A00D10C8E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		E760DECC159CD14A00D10C8E /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E760DECD159CD14A00D10C8E /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E760DED2159CD14A00D10C8E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		E760DED3159CD14A00D10C8E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E760DED5159CD14A00D10C8E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FaceArt/FaceArt-Prefix.pch";
+				INFOPLIST_FILE = "FaceArt/FaceArt-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		E760DED6159CD14A00D10C8E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FaceArt/FaceArt-Prefix.pch";
+				INFOPLIST_FILE = "FaceArt/FaceArt-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E760DEB0159CD14900D10C8E /* Build configuration list for PBXProject "FaceArt" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E760DED2159CD14A00D10C8E /* Debug */,
+				E760DED3159CD14A00D10C8E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E760DED4159CD14A00D10C8E /* Build configuration list for PBXNativeTarget "FaceArt" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E760DED5159CD14A00D10C8E /* Debug */,
+				E760DED6159CD14A00D10C8E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E760DEAD159CD14900D10C8E /* Project object */;
+}
