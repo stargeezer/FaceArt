@@ -15,6 +15,7 @@
 		E760DECB159CD14A00D10C8E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E760DECA159CD14A00D10C8E /* AppDelegate.m */; };
 		E760DECE159CD14A00D10C8E /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E760DECC159CD14A00D10C8E /* MainStoryboard.storyboard */; };
 		E760DED1159CD14A00D10C8E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E760DED0159CD14A00D10C8E /* ViewController.m */; };
+		E760DED9159CD1CA00D10C8E /* FAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E760DED8159CD1CA00D10C8E /* FAViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,15 +23,17 @@
 		E760DEBA159CD14A00D10C8E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E760DEBC159CD14A00D10C8E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E760DEBE159CD14A00D10C8E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		E760DEC2159CD14A00D10C8E /* FaceArt-Info.plist */ = {isa = PBXFileReference; path = "FaceArt-Info.plist"; sourceTree = "<group>"; };
+		E760DEC2159CD14A00D10C8E /* FaceArt-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FaceArt-Info.plist"; sourceTree = "<group>"; };
 		E760DEC4159CD14A00D10C8E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E760DEC6159CD14A00D10C8E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		E760DEC8159CD14A00D10C8E /* FaceArt-Prefix.pch */ = {isa = PBXFileReference; path = "FaceArt-Prefix.pch"; sourceTree = "<group>"; };
-		E760DEC9159CD14A00D10C8E /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		E760DEC8159CD14A00D10C8E /* FaceArt-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FaceArt-Prefix.pch"; sourceTree = "<group>"; };
+		E760DEC9159CD14A00D10C8E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E760DECA159CD14A00D10C8E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		E760DECD159CD14A00D10C8E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		E760DECF159CD14A00D10C8E /* ViewController.h */ = {isa = PBXFileReference; path = ViewController.h; sourceTree = "<group>"; };
+		E760DECF159CD14A00D10C8E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		E760DED0159CD14A00D10C8E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		E760DED7159CD1CA00D10C8E /* FAViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FAViewController.h; sourceTree = "<group>"; };
+		E760DED8159CD1CA00D10C8E /* FAViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +83,8 @@
 				E760DEC9159CD14A00D10C8E /* AppDelegate.h */,
 				E760DECA159CD14A00D10C8E /* AppDelegate.m */,
 				E760DECC159CD14A00D10C8E /* MainStoryboard.storyboard */,
+				E760DED7159CD1CA00D10C8E /* FAViewController.h */,
+				E760DED8159CD1CA00D10C8E /* FAViewController.m */,
 				E760DECF159CD14A00D10C8E /* ViewController.h */,
 				E760DED0159CD14A00D10C8E /* ViewController.m */,
 				E760DEC1159CD14A00D10C8E /* Supporting Files */,
@@ -125,6 +130,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = "Panoramas Northwest";
 			};
 			buildConfigurationList = E760DEB0159CD14900D10C8E /* Build configuration list for PBXProject "FaceArt" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -163,6 +169,7 @@
 				E760DEC7159CD14A00D10C8E /* main.m in Sources */,
 				E760DECB159CD14A00D10C8E /* AppDelegate.m in Sources */,
 				E760DED1159CD14A00D10C8E /* ViewController.m in Sources */,
+				E760DED9159CD1CA00D10C8E /* FAViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
