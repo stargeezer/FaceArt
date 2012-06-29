@@ -81,6 +81,8 @@
 	
     self.context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
     
+    self.preferredFramesPerSecond = 30;
+    
     if (!self.context) {
         NSLog(@"failed to create ES context");
     }
@@ -148,7 +150,6 @@
 
 -(void)update
 {
-    
     if (_increasing) {
         _curRed += 1.0 * self.timeSinceLastUpdate;
         _aspect += 2;
