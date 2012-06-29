@@ -19,6 +19,7 @@
 		E760DEDD159CD45100D10C8E /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E760DEDC159CD45100D10C8E /* GLKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		E760DEE2159CD92F00D10C8E /* FaceArtIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = E760DEE1159CD92F00D10C8E /* FaceArtIcon.png */; };
 		E760DEE4159CD94300D10C8E /* FaceArtIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = E760DEE3159CD94300D10C8E /* FaceArtIcon.png */; };
+		E760DEE6159D20C100D10C8E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E760DEE5159D20C100D10C8E /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,8 @@
 		E760DEDE159CD52600D10C8E /* shaders.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = shaders.h; sourceTree = "<group>"; };
 		E760DEE1159CD92F00D10C8E /* FaceArtIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FaceArtIcon.png; sourceTree = "<group>"; };
 		E760DEE3159CD94300D10C8E /* FaceArtIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FaceArtIcon.png; sourceTree = "<group>"; };
+		E760DEE5159D20C100D10C8E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		E760DEE7159D2DAA00D10C8E /* bufferData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bufferData.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E760DEE6159D20C100D10C8E /* QuartzCore.framework in Frameworks */,
 				E760DEDD159CD45100D10C8E /* GLKit.framework in Frameworks */,
 				E760DEDB159CD40800D10C8E /* OpenGLES.framework in Frameworks */,
 				E760DEBB159CD14A00D10C8E /* UIKit.framework in Frameworks */,
@@ -81,6 +85,7 @@
 			children = (
 				E760DEDC159CD45100D10C8E /* GLKit.framework */,
 				E760DEDA159CD40800D10C8E /* OpenGLES.framework */,
+				E760DEE5159D20C100D10C8E /* QuartzCore.framework */,
 				E760DEBA159CD14A00D10C8E /* UIKit.framework */,
 				E760DEBC159CD14A00D10C8E /* Foundation.framework */,
 				E760DEBE159CD14A00D10C8E /* CoreGraphics.framework */,
@@ -95,6 +100,7 @@
 				E760DEDF159CD90900D10C8E /* images */,
 				E760DEC9159CD14A00D10C8E /* AppDelegate.h */,
 				E760DECA159CD14A00D10C8E /* AppDelegate.m */,
+				E760DEE7159D2DAA00D10C8E /* bufferData.h */,
 				E760DECC159CD14A00D10C8E /* MainStoryboard.storyboard */,
 				E760DED7159CD1CA00D10C8E /* FAViewController.h */,
 				E760DED8159CD1CA00D10C8E /* FAViewController.m */,

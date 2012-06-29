@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <GLKit/GLKit.h>
+#import <QuartzCore/QuartzCore.h>
 
 @interface FAViewController : GLKViewController
 {
@@ -16,6 +17,9 @@
     float _aspect;
     BOOL _increasing;
     float _rotation;
+    
+    float _touchX;
+    float _touchY;
     
     GLuint _vertexBuffer;
     GLuint _indexBuffer;

@@ -8,28 +8,9 @@
 
 #import "FAViewController.h"
 #import "shaders.h"
+#import "bufferData.h"
 
 @implementation FAViewController
-
-typedef struct 
-{
-    float Position[3];
-    float Color[4];
-} Vertex;
-
-const Vertex Vertices[] = 
-{
-    {{1, -1,0}, {1,0,0,1}},
-    {{1,1,0}, {0,1,0,1}},
-    {{-1,1,0}, {0,0,1,1}},
-    {{-1,-1,0}, {0,0,0,1}}
-};
-
-const GLubyte Indices[] = 
-{
-    0,1,2,
-    2,3,0
-};
 
 
 @synthesize context;
@@ -49,7 +30,6 @@ const GLubyte Indices[] =
     [EAGLContext setCurrentContext:self.context];
     self._effect = [[GLKBaseEffect alloc] init];
     
-    //glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, 1024, 1024, 0, GL_RGB, GL_UNSIGNED_BYTE, <#const GLvoid *pixels#>)
     
     glGenBuffers(1, &_vertexBuffer);
     glBindBuffer(GL_ARRAY_BUFFER, _vertexBuffer);
@@ -81,6 +61,8 @@ const GLubyte Indices[] =
     
     
     NSLog([NSString stringWithFormat:@"%s",shaders[1]]);
+    
+
     
 }
 
@@ -129,18 +111,17 @@ const GLubyte Indices[] =
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    NSLog(@"timeSinceLastUpdate: %f",self.timeSinceLastUpdate);
-    NSLog(@"timeSinceLastDraw: %f",self.timeSinceLastDraw);
-    NSLog(@"timeSinceFirstResume: %f",self.timeSinceFirstResume);
-    NSLog(@"timeSinceLastResume: %f",self.timeSinceLastResume);
-    
-    self.paused = !self.paused;
+   
 }
 
 -(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
     UITouch *touch = [[event allTouches] anyObject];
     CGPoint touchLocation = [touch locationInView:[touch view]];
+    _touchX = touchLocation.x;
+    _touchY = touchLocation.y;
+    
+    [self.view setNeedsDisplay];
 }
 
 #pragma mark GLKViewDelegate
@@ -189,7 +170,8 @@ const GLubyte Indices[] =
     GLKMatrix4 projectionMatrix = GLKMatrix4MakePerspective(GLKMathDegreesToRadians(_aspect), aspect, 4.0, 10.0);
     self._effect.transform.projectionMatrix = projectionMatrix;
     
-    GLKMatrix4 modelViewMatrix = GLKMatrix4MakeTranslation(1.0, 0.0, -6.0);
+    GLKMatrix4 modelViewMatrix = GLKMatrix4MakeTranslation(GLKMathDegreesToRadians(_touchX), 
+                                                           (GLKMathDegreesToRadians(_touchY)), -6.0);
     _rotation += 90 * self.timeSinceLastUpdate;
     modelViewMatrix = GLKMatrix4Rotate(modelViewMatrix, GLKMathDegreesToRadians(_rotation), 0, 0, 1);
     self._effect.transform.modelviewMatrix = modelViewMatrix;
