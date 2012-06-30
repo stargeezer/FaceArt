@@ -16,6 +16,8 @@
 @synthesize context;
 @synthesize _effect;
 
+
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -29,6 +31,7 @@
 {
     [EAGLContext setCurrentContext:self.context];
     self._effect = [[GLKBaseEffect alloc] init];
+    
     
     
     glGenBuffers(1, &_vertexBuffer);
@@ -62,7 +65,9 @@
     
     NSLog([NSString stringWithFormat:@"%s",shaders[1]]);
     
-
+    GLuint vsh;
+    
+    vsh = [self createShader:GL_VERTEX_SHADER source:shaders[0]];
     
 }
 
@@ -113,6 +118,8 @@
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
+//    _touchX  += 1;
+//    _touchY  += 1;
    
 }
 
@@ -120,8 +127,11 @@
 {
     UITouch *touch = [[event allTouches] anyObject];
     CGPoint touchLocation = [touch locationInView:[touch view]];
-    _touchX = touchLocation.x;
+   _touchX = touchLocation.x;
     _touchY = touchLocation.y;
+    
+    _touchY = 0.0;
+    _touchY = 0.0;
     
     [self.view setNeedsDisplay];
 }
@@ -147,37 +157,58 @@
 
 #pragma mark GLKViewControllerDelegate
 
-
 -(void)update
 {
-    if (_increasing) {
+    if (_increasing) 
+    {
         _curRed += 1.0 * self.timeSinceLastUpdate;
         _aspect += 2;
     }
-    else {
+    else 
+    {
         _curRed -= 1.0 * self.timeSinceLastUpdate;
         _aspect -= 2;
     }
-    if (_curRed >= 1.0) {
+    
+    if (_curRed >= 1.0) 
+    {
         _curRed = 1.0;
         _increasing = NO;
     }
-    if (_curRed <= 0.0) {
+    if (_curRed <= 0.0) 
+    {
         _curRed = 0.0;
         _increasing = YES;
     }
+   
     
     float aspect = fabsf(self.view.bounds.size.width / self.view.bounds.size.height);
     GLKMatrix4 projectionMatrix = GLKMatrix4MakePerspective(GLKMathDegreesToRadians(_aspect), aspect, 4.0, 10.0);
     self._effect.transform.projectionMatrix = projectionMatrix;
     
-    GLKMatrix4 modelViewMatrix = GLKMatrix4MakeTranslation(GLKMathDegreesToRadians(_touchX), 
-                                                           (GLKMathDegreesToRadians(_touchY)), -6.0);
+    //GLKMatrix4 modelViewMatrix = GLKMatrix4MakeTranslation(GLKMathDegreesToRadians(_touchX), 
+   //                                                        (GLKMathDegreesToRadians(_touchY)), -6.0);
+    
+    GLKMatrix4 modelViewMatrix = GLKMatrix4MakeTranslation(0.0 , 0.0, -6.0);
+    
     _rotation += 90 * self.timeSinceLastUpdate;
     modelViewMatrix = GLKMatrix4Rotate(modelViewMatrix, GLKMathDegreesToRadians(_rotation), 0, 0, 1);
     self._effect.transform.modelviewMatrix = modelViewMatrix;
 }
 
+#pragma mark shader stuff
 
+-(GLuint)createShader:(GLenum)type source:(const char*)source
+{
+    GLuint name;
+    
+    name = glCreateShader(type);
+    
+    glShaderSource(name, 1, &source, NULL);
+    
+    glCompileShader(name);
+    
+    return name;
+}
 
 @end

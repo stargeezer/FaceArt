@@ -20,6 +20,7 @@
 		E760DEE2159CD92F00D10C8E /* FaceArtIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = E760DEE1159CD92F00D10C8E /* FaceArtIcon.png */; };
 		E760DEE4159CD94300D10C8E /* FaceArtIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = E760DEE3159CD94300D10C8E /* FaceArtIcon.png */; };
 		E760DEE6159D20C100D10C8E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E760DEE5159D20C100D10C8E /* QuartzCore.framework */; };
+		E760DEF3159F631D00D10C8E /* FAScene.m in Sources */ = {isa = PBXBuildFile; fileRef = E760DEF2159F631D00D10C8E /* FAScene.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,8 @@
 		E760DEE3159CD94300D10C8E /* FaceArtIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FaceArtIcon.png; sourceTree = "<group>"; };
 		E760DEE5159D20C100D10C8E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		E760DEE7159D2DAA00D10C8E /* bufferData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bufferData.h; sourceTree = "<group>"; };
+		E760DEF1159F631D00D10C8E /* FAScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FAScene.h; sourceTree = "<group>"; };
+		E760DEF2159F631D00D10C8E /* FAScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAScene.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,8 +99,9 @@
 		E760DEC0159CD14A00D10C8E /* FaceArt */ = {
 			isa = PBXGroup;
 			children = (
-				E760DEE0159CD91500D10C8E /* textures */,
 				E760DEDF159CD90900D10C8E /* images */,
+				E760DEF0159F62E900D10C8E /* Scenes */,
+				E760DEE0159CD91500D10C8E /* textures */,
 				E760DEC9159CD14A00D10C8E /* AppDelegate.h */,
 				E760DECA159CD14A00D10C8E /* AppDelegate.m */,
 				E760DEE7159D2DAA00D10C8E /* bufferData.h */,
@@ -134,6 +138,15 @@
 			children = (
 			);
 			name = textures;
+			sourceTree = "<group>";
+		};
+		E760DEF0159F62E900D10C8E /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				E760DEF1159F631D00D10C8E /* FAScene.h */,
+				E760DEF2159F631D00D10C8E /* FAScene.m */,
+			);
+			name = Scenes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,6 +217,7 @@
 				E760DEC7159CD14A00D10C8E /* main.m in Sources */,
 				E760DECB159CD14A00D10C8E /* AppDelegate.m in Sources */,
 				E760DED9159CD1CA00D10C8E /* FAViewController.m in Sources */,
+				E760DEF3159F631D00D10C8E /* FAScene.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

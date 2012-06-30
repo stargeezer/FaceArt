@@ -28,4 +28,6 @@
 @property(strong, nonatomic)EAGLContext *context;
 @property(strong, nonatomic) GLKBaseEffect *_effect;
 
+-(GLuint)createShader:(GLenum)type source:(const char*)source;
+
 @end
