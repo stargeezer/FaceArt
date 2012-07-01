@@ -15,6 +15,10 @@
 
 @synthesize context;
 @synthesize _effect;
+@synthesize vertices;
+@synthesize texture;
+
+
 
 
 
@@ -32,24 +36,36 @@
     [EAGLContext setCurrentContext:self.context];
     self._effect = [[GLKBaseEffect alloc] init];
     
-    
+    vertices = [[NSMutableArray alloc]initWithCapacity:200];
     
     glGenBuffers(1, &_vertexBuffer);
     glBindBuffer(GL_ARRAY_BUFFER, _vertexBuffer);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(Vertices), Vertices, GL_STATIC_DRAW);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(ellipseVertices), textureVertices, GL_STATIC_DRAW);
     
-    glGenBuffers(1, &_indexBuffer);
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, _indexBuffer);
-    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(Indices), Indices, GL_STATIC_DRAW);
+//    glGenBuffers(1, &_indexBuffer);
+//    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, _indexBuffer);
+//    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(ellipseIndices), ellipseIndices, GL_STATIC_DRAW);
     
     _aspect = 40.0;
     
     // load texture data
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"moss" ofType:@"JPG"];
+    NSError *error;
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"rocks" ofType:@"JPG"];
     NSData *texData = [[NSData alloc] initWithContentsOfFile:path];
     UIImage *image = [[UIImage alloc] initWithData:texData];
     if(image == nil)
         NSLog(@"couldn't open image");
+    
+    texture = [GLKTextureLoader textureWithCGImage:image.CGImage options:nil error:&error];
+    
+    if(error)
+        NSLog(@"couldn't load texture from image %@",error);
+    
+    if (texture != nil) {
+        self._effect.texture2d0.envMode = GLKTextureEnvModeReplace;
+        self._effect.texture2d0.target = GLKTextureTarget2D;
+        self._effect.texture2d0.name = texture.name;
+    }
     
     GLuint width = CGImageGetWidth(image.CGImage);
     GLuint height = CGImageGetHeight(image.CGImage);
@@ -87,6 +103,7 @@
     self.context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
     
     self.preferredFramesPerSecond = 30;
+    
     
     if (!self.context) {
         NSLog(@"failed to create ES context");
@@ -144,6 +161,9 @@
     glClear(GL_COLOR_BUFFER_BIT);
     [self._effect prepareToDraw];
     
+
+    
+    
     glBindBuffer(GL_ARRAY_BUFFER, _vertexBuffer);
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, _indexBuffer);
     
@@ -152,7 +172,8 @@
     glEnableVertexAttribArray(GLKVertexAttribColor);
     glVertexAttribPointer(GLKVertexAttribColor, 4, GL_FLOAT, GL_FALSE, sizeof(Vertex), (const GLvoid *) offsetof(Vertex, Color));
     
-    glDrawElements(GL_TRIANGLES, sizeof(Indices) /sizeof(Indices[0]), GL_UNSIGNED_BYTE, 0);
+   // glDrawElements(GL_TRIANGLE_STRIP, sizeof(ellipseIndices) /sizeof(ellipseIndices[0]), GL_UNSIGNED_BYTE, 0);
+    glDrawElements(GL_TRIANGLE_STRIP, 2, GL_UNSIGNED_BYTE, 0);
 }
 
 #pragma mark GLKViewControllerDelegate
@@ -181,13 +202,11 @@
         _increasing = YES;
     }
    
-    
     float aspect = fabsf(self.view.bounds.size.width / self.view.bounds.size.height);
-    GLKMatrix4 projectionMatrix = GLKMatrix4MakePerspective(GLKMathDegreesToRadians(_aspect), aspect, 4.0, 10.0);
-    self._effect.transform.projectionMatrix = projectionMatrix;
+    //GLKMatrix4 projectionMatrix = GLKMatrix4MakePerspective(GLKMathDegreesToRadians(_aspect), aspect, 4.0, 10.0);
     
-    //GLKMatrix4 modelViewMatrix = GLKMatrix4MakeTranslation(GLKMathDegreesToRadians(_touchX), 
-   //                                                        (GLKMathDegreesToRadians(_touchY)), -6.0);
+    GLKMatrix4 projectionMatrix = GLKMatrix4MakeOrtho(-5, 3, -4, 2, 4.0, 10.0);
+    self._effect.transform.projectionMatrix = projectionMatrix;
     
     GLKMatrix4 modelViewMatrix = GLKMatrix4MakeTranslation(0.0 , 0.0, -6.0);
     

@@ -10,6 +10,9 @@
 #import <GLKit/GLKit.h>
 #import <QuartzCore/QuartzCore.h>
 
+#import "constants.h"
+
+
 @interface FAViewController : GLKViewController
 {
     
@@ -23,11 +26,16 @@
     
     GLuint _vertexBuffer;
     GLuint _indexBuffer;
+    
+    GLKTextureInfo *texture;
 }
 
 @property(strong, nonatomic)EAGLContext *context;
 @property(strong, nonatomic) GLKBaseEffect *_effect;
+@property(readwrite)NSMutableArray *vertices;
+@property(strong, nonatomic)GLKTextureInfo *texture;
 
 -(GLuint)createShader:(GLenum)type source:(const char*)source;
+
 
 @end
