@@ -2,40 +2,43 @@
 //  FAViewController.h
 //  FaceArt
 //
-//  Created by Mark Strand on 6/28/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Created by Mark Strand on 8/24/12.
+//  Copyright (c) 2012 Panoramas Northwest. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
-#import <GLKit/GLKit.h>
-#import <QuartzCore/QuartzCore.h>
+#import <AVFoundation/AVFoundation.h>
+#import <QuartzCore/Quartzcore.h>
+#import <CoreImage/CoreImage.h>
+#import <CoreMedia/CoreMedia.h>
 
-#import "constants.h"
 
 
-@interface FAViewController : GLKViewController
+@interface FAViewController : UIViewController <AVCaptureVideoDataOutputSampleBufferDelegate>
 {
+    IBOutlet UIView *previewView;
     
-    float _curRed;
-    float _aspect;
-    BOOL _increasing;
-    float _rotation;
+    AVCaptureVideoPreviewLayer* previewLayer;
+    AVCaptureVideoDataOutput* videoDataOutput;
+    AVCaptureSession* lclSession;
     
-    float _touchX;
-    float _touchY;
+    dispatch_queue_t videoDataOutputQueue;
+    AVCaptureStillImageOutput *stillImageOutput;
     
-    GLuint _vertexBuffer;
-    GLuint _indexBuffer;
+    CIDetector *faceDetector;
+   // BOOL detectFaces;
     
-    GLKTextureInfo *texture;
+    BOOL isUsingFrontFacingCamera;
+    
+    CALayer* featuresLayer;
+    
+    // facePoints
+    CGPoint lEyePoint;
+    CGPoint rEyePoint;
+    CGPoint mouthPoint;
+    
 }
 
-@property(strong, nonatomic)EAGLContext *context;
-@property(strong, nonatomic) GLKBaseEffect *_effect;
-@property(readwrite)NSMutableArray *vertices;
-@property(strong, nonatomic)GLKTextureInfo *texture;
-
--(GLuint)createShader:(GLenum)type source:(const char*)source;
-
+@property (nonatomic, retain)AVCaptureSession *lclSession;
 
 @end
